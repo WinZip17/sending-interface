@@ -1,0 +1,490 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f3f4f6;
+  color: #1c1c1e;
+}
+
+.app-shell {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.auth-card {
+  width: min(100%, 26rem);
+  padding: 1.75rem 1.5rem;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(28, 28, 30, 0.06);
+}
+
+.auth-card h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 650;
+}
+
+.auth-lead,
+.auth-status {
+  margin: 0;
+  color: #3f3f46;
+  line-height: 1.45;
+}
+
+.auth-form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.auth-field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 400;
+  color: inherit;
+  background: #fff;
+}
+
+.auth-field input:focus {
+  outline: 2px solid #b9d6ff;
+  border-color: #007aff;
+}
+
+.auth-card button {
+  margin-top: 0.35rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 650;
+  color: #fff;
+  background: #007aff;
+  cursor: pointer;
+}
+
+.auth-card button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.auth-secondary {
+  width: 100%;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.auth-error,
+.auth-note {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.auth-error {
+  color: #b42318;
+}
+
+.auth-note {
+  margin: 0.9rem 0.75rem 0;
+  padding: 0.75rem 0.8rem;
+  border-radius: 10px;
+  color: #92400e;
+  background: #fffbeb;
+}
+
+.chat-app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 22rem minmax(0, 1fr);
+  background: #fff;
+  color: #1c1c1e;
+}
+
+.chat-side {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid #ececef;
+  background: #fff;
+}
+
+.chat-side-header,
+.chat-main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.chat-side-header {
+  border-bottom: 1px solid #ececef;
+}
+
+.chat-main-header {
+  gap: 0.7rem;
+  justify-content: flex-start;
+  box-shadow: 0 1px 0 #ececef;
+}
+
+.chat-side-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chat-side-header h1,
+.chat-main-header h2 {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-side-header h1 {
+  font-size: 1.5rem;
+}
+
+.chat-avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.chat-main-header .chat-avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.chat-text-button,
+.chat-new,
+.chat-item,
+.new-chat button {
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.chat-text-button {
+  padding: 0.35rem 0.55rem;
+  color: #8e8e93;
+  background: transparent;
+}
+
+.chat-new {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  background: #007aff;
+}
+
+.new-chat button[type='submit'] {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: #fff;
+  background: #007aff;
+}
+
+.new-chat {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.new-chat .auth-field {
+  margin: 0;
+}
+
+.new-chat-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.new-chat button[type='submit'] {
+  margin: 0;
+}
+
+.chat-list {
+  margin: 0;
+  padding: 0.25rem 0.4rem 0.75rem;
+  list-style: none;
+  overflow: auto;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  text-align: left;
+  color: inherit;
+  background: transparent;
+}
+
+.chat-item-body {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.chat-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.chat-item-title {
+  overflow: hidden;
+  font-weight: 650;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-item-time {
+  flex: none;
+  color: #8e8e93;
+  font-size: 0.75rem;
+}
+
+.chat-item-preview {
+  overflow: hidden;
+  color: #8e8e93;
+  font-size: 0.85rem;
+  font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-item.is-active {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background-color: #80bcff;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' fill='none' stroke='%23007aff' stroke-opacity='.18' stroke-width='1.2'%3E%3Ccircle cx='28' cy='36' r='10'/%3E%3Ccircle cx='30' cy='34' r='3'/%3E%3Cpath d='M92 22l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z'/%3E%3Ccircle cx='146' cy='48' r='16'/%3E%3Ccircle cx='150' cy='44' r='5'/%3E%3Cpath d='M48 112c8-14 22-14 30 0-8 6-22 6-30 0z'/%3E%3Ccircle cx='118' cy='128' r='7'/%3E%3Cpath d='M20 150h8M24 146v8M150 150l4 6 4-6-4-6z'/%3E%3C/svg%3E"),
+    linear-gradient(28deg, #99d5d7 8%, #80bcff 92%);
+  background-size: 180px 180px, auto;
+}
+
+.chat-placeholder,
+.chat-empty {
+  margin: 0;
+  padding: 1.5rem 1rem;
+  color: #52525b;
+  line-height: 1.45;
+}
+
+.chat-placeholder {
+  margin: auto;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 40, 80, 0.25);
+}
+
+.thread {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 0;
+  padding: 1rem 1.25rem;
+  overflow: auto;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: min(75%, 28rem);
+  padding: 0.5rem 0.65rem 0.35rem;
+  border-radius: 16px;
+  line-height: 1.35;
+  color: #060708;
+}
+
+.message p {
+  align-self: stretch;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.1rem;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.message-out {
+  align-self: flex-end;
+  background: #e9fdff;
+  border-bottom-right-radius: 6px;
+}
+
+.message-in {
+  align-self: flex-start;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+}
+
+.message-meta {
+  color: rgba(6, 7, 8, 0.45);
+}
+
+.message-status {
+  font-size: inherit;
+  color: #d92d20;
+}
+
+.composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0.35rem;
+  margin: 0.35rem 0.85rem 0.85rem;
+  padding: 0.3rem 0.35rem 0.3rem 0.9rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.composer-field {
+  display: grid;
+}
+
+.composer-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.composer textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  max-height: 8rem;
+  padding: 0.45rem 0.2rem;
+  border: 0;
+  border-radius: 0;
+  resize: none;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.composer textarea:focus {
+  outline: 2px solid #b9d6ff;
+}
+
+.composer .auth-error {
+  grid-column: 1 / -1;
+}
+
+.composer button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #007aff;
+  cursor: pointer;
+}
+
+.composer button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.composer-wait {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.composer button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+@media (max-width: 720px) {
+  .chat-app {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(16rem, 42vh) minmax(0, 1fr);
+  }
+
+  .chat-side {
+    border-right: 0;
+    border-bottom: 1px solid #ececef;
+  }
+}
